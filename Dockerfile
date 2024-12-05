@@ -2,9 +2,11 @@ FROM python:3
 
 WORKDIR /data
 
-RUN python manage.py migrate
+RUN pip install Django==5.1.4
 
 COPY . .
+
+RUN python manage.py migrate
 
 EXPOSE 8000
 
